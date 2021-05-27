@@ -1,0 +1,30 @@
+.search__input-wrapper {
+  position: relative;
+}
+
+.search__input-wrapper::before {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../assets/images/search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 8px;
+  left: 14px;
+  z-index: 1;
+}
+
+.search__input {
+  width: 500px;
+  height: 40px;
+  color: #808080;
+  border: none;
+  background: #ffffff;
+  outline: none;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 40px;
+  padding: 8px 16px 8px 44px;
+  box-sizing: border-box;
+}

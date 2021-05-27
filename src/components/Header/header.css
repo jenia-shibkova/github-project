@@ -1,0 +1,9 @@
+.header {
+  background: #0064EB;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+}
