@@ -1,20 +1,8 @@
 module.exports = {
-  "extends": [
-    "react-app",
-    "airbnb",
-    "plugin:jsx-a11y/recommended",
-    "prettier"
-  ],
-  "plugins": [
-    "jsx-a11y",
-    "prettier"
-  ],
-  "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    // "prettier/prettier": [
-    //   "error", {
-    //     // "semi": false
-    //   }
-    // ]
-  }
-}
+  extends: ['react-app', 'airbnb', 'plugin:jsx-a11y/recommended', 'prettier'],
+  plugins: ['jsx-a11y', 'prettier'],
+  rules: {
+    'react/jsx-filename-extension': [1, {extensions: ['.js', '.jsx']}],
+    'prettier/prettier': [],
+  },
+};

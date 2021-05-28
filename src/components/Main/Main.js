@@ -1,10 +1,12 @@
 import React from 'react';
 import './main.css';
+// import InitialContent from './InitialContent';
+import EmptyContent from './EmptyContent';
 
 const Main = () => (
-    <main>
-      <p>Main</p>
-    </main> 
-  );
+  <main>
+    <EmptyContent />
+  </main>
+);
 
 export default Main;
