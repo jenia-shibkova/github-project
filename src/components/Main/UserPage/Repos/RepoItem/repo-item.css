@@ -1,0 +1,26 @@
+.repo-item {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 24px 30px;
+  margin-bottom: 24px;
+}
+
+.repo__title {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.repo__title-link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #0064EB;
+}
+
+.repo__description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}

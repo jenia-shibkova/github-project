@@ -1,0 +1,11 @@
+.repos__title {
+  margin: 0;
+  margin-bottom: 30px;
+  margin-left: 4px;
+}
+
+.repos__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

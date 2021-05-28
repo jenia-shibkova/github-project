@@ -3,6 +3,5 @@ module.exports = {
   plugins: ['jsx-a11y', 'prettier'],
   rules: {
     'react/jsx-filename-extension': [1, {extensions: ['.js', '.jsx']}],
-    'prettier/prettier': [],
   },
 };
