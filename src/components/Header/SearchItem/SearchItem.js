@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSearchInputValue } from '../../../actions';
 import './search-item.css';
 
 const SearchItem = () => {
   const [searchValue, setSearchValue] = useState('');
+  const dispatch = useDispatch();
 
   function searchHandler(event) {
     if (event.key === 'Enter') {
       event.preventDefault();
       console.log(event.target.value)
-      setSearchValue(event.target.value);
+      setSearchValue(event.target.value); 
+
+      dispatch(setSearchInputValue(event.target.value));
     }
-    // dispatch(setCurrentPage(1))
     // dispatch(getRepos(searchValue, currentPage, perPage))
   }
 
