@@ -28,3 +28,7 @@
   padding: 8px 16px 8px 44px;
   box-sizing: border-box;
 }
+
+.search__input:focus {
+  color: #000000;
+}
