@@ -41,18 +41,18 @@
   border-color: #0064EB;
 }
 
-.pagination__link--disabled a {
-  color: rgb(198, 197, 202);
-  border: 1px solid rgb(198, 197, 202);
-}
-
-.pagination .previous a,
-.pagination .next a {
+.previous a,
+.next a {
   border-color: transparent;
   color: #0064EB;
   width: 24px;
 }
 
-.pagination .next a { 
+.pagination__link--disabled a,
+.pagination__link--disabled a {
+  color: #808080;
+}
+
+.next a { 
   margin-right: 12px;
 }
