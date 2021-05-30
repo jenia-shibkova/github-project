@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setSearchInputValue } from '../../../actions';
+import { setSearchInputValue, getRepos } from '../../../actions';
 import './search-item.css';
 
 const SearchItem = () => {
@@ -13,9 +13,9 @@ const SearchItem = () => {
       console.log(event.target.value)
       setSearchValue(event.target.value); 
 
-      dispatch(setSearchInputValue(event.target.value));
+      dispatch(setSearchInputValue(searchValue));
+      dispatch(getRepos(searchValue));
     }
-    // dispatch(getRepos(searchValue, currentPage, perPage))
   }
 
   return (

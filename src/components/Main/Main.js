@@ -5,8 +5,9 @@ import InitialContent from './InitialContent';
 import UserPage from './UserPage';
 
 const Main = () => {
-  const {searchValue} = useSelector(state => state.repos);
-  console.log(searchValue)
+  const { searchValue } = useSelector(state => state.repos);
+
+
   
   if (!searchValue) {
     return (
@@ -14,6 +15,10 @@ const Main = () => {
         <InitialContent />
       </>
     );
+  }
+
+  if (searchValue) {    
+    console.log(searchValue)
   }
 
   return (

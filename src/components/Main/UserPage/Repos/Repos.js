@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import './repos.css';
 import RepoItem from './RepoItem';
-
-const PER_PAGE = 4;
+import { PER_PAGE } from '../../../../constants';
 
 const data = [<RepoItem />, <RepoItem />, <RepoItem />, <RepoItem />, <RepoItem />, <RepoItem />,
   <RepoItem />, <RepoItem />, <RepoItem />, <RepoItem />, <RepoItem />, <RepoItem />,
