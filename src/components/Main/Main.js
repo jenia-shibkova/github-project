@@ -7,8 +7,8 @@ import UserWithoutRepo from './UserWithoutRepo';
 import { isNotFound } from '../../utils';
 
 const Main = () => {
-  const { searchValue } = useSelector(state => state.repos);
-  const { userData } = useSelector(state => state.repos);
+  const { searchValue } = useSelector(state => state.app);
+  const { userData } = useSelector(state => state.app);
   const { reposCount } = userData;
   
   if (!searchValue) {

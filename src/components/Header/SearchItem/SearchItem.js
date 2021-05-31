@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setSearchInputValue, getRepos, resetUserData } from '../../../actions';
+import { setSearchInputValue, getUserData, getRepos, resetUserData } from '../../../actions';
 import './search-item.css';
 
 const SearchItem = () => {
@@ -15,9 +15,10 @@ const SearchItem = () => {
       dispatch(setSearchInputValue(searchValue));
 
       if (searchValue) {
+        dispatch(getUserData(searchValue));
         dispatch(getRepos(searchValue));
       }
-      
+
       dispatch(resetUserData());
     }
   }

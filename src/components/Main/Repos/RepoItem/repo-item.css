@@ -3,6 +3,8 @@
   border-radius: 6px;
   padding: 24px 30px;
   margin-bottom: 24px;
+  min-height: 112px;
+  box-sizing: border-box;
 }
 
 .repo__title {

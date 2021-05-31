@@ -1,10 +1,18 @@
-import { SET_SEARCH_VALUE, SET_IS_FETCHING, GET_USER_DATA, RESET_USER_DATA } from '../constants/actions-type';
+import { 
+  SET_SEARCH_VALUE, 
+  SET_IS_FETCHING, 
+  GET_USER_DATA, 
+  GET_USER_REPOS, 
+  RESET_USER_DATA,
+  SET_CURRENT_PAGE 
+} from '../constants/actions-type';
 
 const defaultState = {
   userData: {},
-  items: [],  
+  repos: [],  
   isFetching: false,
-  searchValue: ''
+  searchValue: '',
+  currentPage: 1,
 }
 
 const reposReducer = (state = defaultState, action) => {
@@ -24,13 +32,24 @@ const reposReducer = (state = defaultState, action) => {
         ...state,
         userData: action.payload,
         isFetching: false
-    }     
+      }
+    case GET_USER_REPOS:
+      return {
+        ...state,
+        repos: action.payload,
+        isFetching: false
+      }     
     case RESET_USER_DATA:
       return {
         ...state,
         userData: {},
         isFetching: false
-    }
+      }
+    case SET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload,
+      }
 
     default:
       return state;

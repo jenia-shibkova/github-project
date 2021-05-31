@@ -6,7 +6,7 @@ import PersonIcon from './PersonIcon';
 import { COUNT_LIMIT } from '../../../constants';
 
 const Profile = () => {
-  const { userData } = useSelector(state => state.repos);
+  const { userData } = useSelector(state => state.app);
   let followers;
 
   if (userData && userData.followers > COUNT_LIMIT) {
