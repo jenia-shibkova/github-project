@@ -1,4 +1,4 @@
-import { SET_SEARCH_VALUE, SET_IS_FETCHING, GET_USER_DATA } from '../constants/actions-type';
+import { SET_SEARCH_VALUE, SET_IS_FETCHING, GET_USER_DATA, RESET_USER_DATA } from '../constants/actions-type';
 
 const defaultState = {
   userData: {},
@@ -24,7 +24,13 @@ const reposReducer = (state = defaultState, action) => {
         ...state,
         userData: action.payload,
         isFetching: false
-    }   
+    }     
+    case RESET_USER_DATA:
+      return {
+        ...state,
+        userData: {},
+        isFetching: false
+    }
 
     default:
       return state;

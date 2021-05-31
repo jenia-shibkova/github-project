@@ -1,13 +1,13 @@
 import React from 'react';
-import './user-page.css';
+import './user-without-repo.css';
 import Profile from '../Profile';
 import Repos from '../Repos';
 
-const UserPage = () => (
+const UserWithoutRepo = () => (
   <main className="user container">
     <Profile />
     <Repos />
   </main>
 );
 
-export default UserPage;
+export default UserWithoutRepo;

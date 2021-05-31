@@ -1,13 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import InitialContent from './InitialContent';
-// import EmptyContent from './EmptyContent';
+import EmptyContent from './EmptyContent';
 import UserPage from './UserPage';
+import UserWithoutRepo from './UserWithoutRepo';
+import { isNotFound } from '../../utils';
 
 const Main = () => {
   const { searchValue } = useSelector(state => state.repos);
-
-
+  const { userData } = useSelector(state => state.repos);
+  const { reposCount } = userData;
   
   if (!searchValue) {
     return (
@@ -17,8 +19,20 @@ const Main = () => {
     );
   }
 
-  if (searchValue) {    
-    console.log(searchValue)
+  if (isNotFound(reposCount)) {
+    return (
+      <>
+        <EmptyContent />
+      </>
+    );
+  }
+
+  if (reposCount === 0) {
+    return (
+      <>
+        <UserWithoutRepo />
+      </>
+    );
   }
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setSearchInputValue, getRepos } from '../../../actions';
+import { setSearchInputValue, getRepos, resetUserData } from '../../../actions';
 import './search-item.css';
 
 const SearchItem = () => {
@@ -10,11 +10,15 @@ const SearchItem = () => {
   function searchHandler(event) {
     if (event.key === 'Enter') {
       event.preventDefault();
-      console.log(event.target.value)
-      setSearchValue(event.target.value); 
 
+      setSearchValue(event.target.value);
       dispatch(setSearchInputValue(searchValue));
-      dispatch(getRepos(searchValue));
+
+      if (searchValue) {
+        dispatch(getRepos(searchValue));
+      }
+      
+      dispatch(resetUserData());
     }
   }
 

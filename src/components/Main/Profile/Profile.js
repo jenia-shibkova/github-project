@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import './profile.css';
 import SocialIcon from './SocialIcon';
 import PersonIcon from './PersonIcon';
-import { COUNT_LIMIT } from '../../../../constants';
+import { COUNT_LIMIT } from '../../../constants';
 
 const Profile = () => {
   const { userData } = useSelector(state => state.repos);
