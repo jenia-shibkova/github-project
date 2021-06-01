@@ -1,0 +1,27 @@
+.logo {
+  display: inline-block;
+  margin-right: 22px;
+}
+
+.logo__icon {
+  width: 41px;
+  height: 40px; 
+}
+
+@media (max-width: 425px) {
+  .logo {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-right: 0;        
+  }
+
+  .logo__icon {
+    width: 32px;
+    height: 32px; 
+  }
+}

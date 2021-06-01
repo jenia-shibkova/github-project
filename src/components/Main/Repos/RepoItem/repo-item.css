@@ -1,0 +1,62 @@
+.repo-item {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 24px 30px;
+  margin-bottom: 24px;
+  min-height: 112px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.repo__title {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.repo__title-link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #0064EB;
+}
+
+.repo__description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+
+@media (max-width: 767px) {
+  .repo-item {
+    padding: 16px 24px;
+    min-height: 100px;
+  }
+
+  .repo__title {
+    margin-bottom: 10px;
+  }
+
+  .repo__title-link {
+    font-size: 22px;
+    line-height: 24px;
+  }  
+
+  .repo__description {
+    font-size: 16px;
+    line-height: 22px;
+  }  
+}
+
+@media (max-width: 674px) {
+  .repo__title-link {
+    font-size: 18px;
+    line-height: 24px;
+  }  
+
+  .repo__description {
+    font-size: 14px;
+    line-height: 18px;
+  }  
+}

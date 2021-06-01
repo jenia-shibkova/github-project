@@ -1,0 +1,119 @@
+.pagination-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.pagination-label {
+  font-size: 14px;
+  line-height: 21px;
+  color: #808080;
+  margin-right: 17px;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  list-style: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;  
+  height: 25px;
+}
+
+.pagination a {
+  padding: 2px 6px 4px;
+  border-radius: 3px;
+  border: 1px solid #0064EB;
+  color: #808080;
+  width: 21px;
+  height: 25px;
+  margin-right: 10px;
+  font-family: "Inter";
+  font-size: 14px;
+  line-height: 25px;
+  border-color: transparent;
+} 
+
+.pagination__link--active a {
+  color: #fff;
+  background: #0064EB;
+  border-color: #0064EB;
+}
+
+.previous a,
+.next a {
+  border-color: transparent;
+  color: #0064EB;
+  width: 24px;
+}
+
+.pagination__link--disabled a,
+.pagination__link--disabled a {
+  color: #808080;
+}
+
+.next a { 
+  margin-right: 12px;
+}
+
+@media (max-width: 674px) {
+  .pagination-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .pagination {
+    width: 100%;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+
+  .pagination-label {
+    margin-top: 6px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .pagination a {
+    margin-right: 4px;
+  }
+
+  .next a {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .pagination-label {
+    margin-top: 10px;
+  }
+
+  .pagination {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .pagination li:not(li.previous, li.next) {
+    display: none;
+  }
+
+  li.previous {
+    margin-right: 20px;
+  }
+}
