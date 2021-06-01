@@ -1,5 +1,4 @@
 import React from 'react';
-import './user-without-repo.css';
 import Profile from '../Profile';
 import Repos from '../Repos';
 

@@ -1,5 +1,6 @@
 .repos {
-  padding-bottom: 28px;  
+  padding-bottom: 28px; 
+  flex-grow: 1;
 }
 
 .repos__title {
@@ -10,10 +11,17 @@
 
 .repos__list-loader-wrapper {
   min-height: 590px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .repos__list {
@@ -21,7 +29,8 @@
   padding: 0;
   margin: 0;
   min-height: 590px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .repos__list .repo-item:last-of-type {
@@ -30,17 +39,27 @@
 
 .no-repo {
   height: calc(100vh - 72px - 40px);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  padding-top: 266px;
-  box-sizing: border-box;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
 }
 
 .no-repo__desc {
   margin: 0;
   width: 243px;
+  padding-top: 110px;
   text-align: center;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 22px;
   line-height: 31px;
   color: #808080;
@@ -56,12 +75,37 @@
   background-repeat: no-repeat;
   background-position: center;
   left: 67px;
-  top: -110px;
+  top: 0;
 }
 
 .loader-wrapper {
   height: calc(100vh - 72px - 40px);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 998px) {
+  .no-repo {
+    height: auto;
+  }
+} 
+
+@media (max-width: 767px) {
+  .repos__list {
+    min-height: 540px;
+  }  
+}
+
+@media (max-width: 425px) {
+  .no-repo__desc {
+    font-size: 16px;
+    line-height: 22px;
+  }  
 }

@@ -61,19 +61,19 @@ const Repos = () => {
         </div>
         <div className="pagination-wrapper">
           <div className="pagination-label">{offset + 1}-{offset + PER_PAGE} of {reposCount} items</div>
-            <ReactPaginate
-              previousLabel="&#10094;"
-              nextLabel="&#10095;"
-              pageCount={pageCount}
-              onPageChange={handlePageClick}
-              containerClassName="pagination"
-              previousLinkClassName="pagination__link"
-              nextLinkClassName="pagination__link"
-              disabledClassName="pagination__link--disabled"
-              activeClassName="pagination__link--active"
-              breakLabel="..."
-              breakClassName="break-me"   
-            />
+          <ReactPaginate
+            previousLabel="&#10094;"
+            nextLabel="&#10095;"
+            pageCount={pageCount}
+            onPageChange={handlePageClick}
+            containerClassName="pagination"
+            previousLinkClassName="pagination__link"
+            nextLinkClassName="pagination__link"
+            disabledClassName="pagination__link--disabled"
+            activeClassName="pagination__link--active"
+            breakLabel="..."
+            breakClassName="break-me"   
+          />
         </div>    
       </div>
     )

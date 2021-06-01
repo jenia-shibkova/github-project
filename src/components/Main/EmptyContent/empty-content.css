@@ -2,13 +2,14 @@
   height: calc(100vh - 72px);
   display: flex;
   justify-content: center;
-  padding-top: 330px;
+  align-items: center;
   box-sizing: border-box;
 }
 
 .empty-content__desc {
   margin: 0;
   width: 210px;
+  padding-top: 110px;
   text-align: center;
   box-sizing: border-box;
   font-size: 22px;
@@ -26,5 +27,16 @@
   background-repeat: no-repeat;
   background-position: center;
   left: 50px;
-  top: -110px;
+  top: 0;
+}
+
+@media (max-width: 425px) {
+  .empty-content {
+    height: calc(100vh - 90px);
+  }
+
+  .empty-content__desc {
+    font-size: 16px;
+    line-height: 22px;
+  }  
 }

@@ -1,24 +1,13 @@
-.user {
-  display: grid;
-  gap: 66px;
-  grid-template-columns: 326px auto;
-  padding-top: 40px;
-}
-
 .profile {
   padding: 0 0 0 15px;
-}
-
-.profile-loading {
-  height: calc(100vh - 72px - 40px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
+  width: 326px;
+  margin-right: 66px;
 }
 
 .avatar {
   border-radius: 50%;
+  width: 280px;
+  height: 280px;
 }
 
 .profile__title {
@@ -39,6 +28,8 @@
 }
 
 .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -48,8 +39,12 @@
 
 .details__followers,
 .details__following {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .details__value {
@@ -58,9 +53,96 @@
   color: #000000;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 1074px) {
+  .profile {
+    width: 260px;
+  }
+
   .details__value {
     font-size: 14px;
     line-height: 21px;
+  }
+
+  .avatar {
+    width: 228px;
+    height: 228px;
+  }
+
+  .profile__title {
+    margin-bottom: 6px;
+  } 
+  
+  .details__followers {
+    margin-right: 8px;
+  }
+
+  .details__value {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width: 998px) {
+  .profile {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }  
+}
+
+@media (max-width: 767px) {
+  .profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .avatar {
+    width: 122px;
+    height: 122px;
+  }
+
+  .profile__description {
+    padding-left: 15px;
+    width: auto;
+  }
+
+  .details {
+    width: 100%; 
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 425px) {
+  .avatar {
+    width: 65px;
+    height: 65px;
+  }
+
+  .profile__title {
+    margin-top: 0;
+    line-height: 32px;
+  }
+
+  .details {
+    width: 100%; 
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .avatar {
+    width: 65px;
+    height: 65px;
+  }
+} 
+
+@media (max-width: 320px) {
+  .avatar {
+    width: 48px;
+    height: 48px;
   }
 }

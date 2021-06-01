@@ -3,7 +3,7 @@ import './logo.css';
 
 const Logo = () => (
   <span className="logo">
-    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className="logo__icon" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

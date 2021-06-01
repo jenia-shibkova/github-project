@@ -4,8 +4,7 @@
   margin-right: 8px;
 }
 
-
-@media (max-width: 425px) {
+@media (max-width: 1074px) {
   .social {
     width: 18px;
     height: 18px;
