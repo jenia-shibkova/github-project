@@ -10,13 +10,14 @@ const SearchItem = () => {
   function searchHandler(event) {
     if (event.key === 'Enter') {
       event.preventDefault();
+      const newValue = event.target.value.trim();
 
-      setSearchValue(event.target.value);
-      dispatch(setSearchInputValue(searchValue));
+      setSearchValue(newValue);
+      dispatch(setSearchInputValue(newValue));
 
-      if (searchValue) {
-        dispatch(getUserData(searchValue));
-        dispatch(getRepos(searchValue));
+      if (newValue) {
+        dispatch(getUserData(newValue));
+        dispatch(getRepos(newValue));
       }
 
       dispatch(resetUserData());

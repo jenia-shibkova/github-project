@@ -1,6 +1,7 @@
 import { 
   SET_SEARCH_VALUE, 
-  SET_IS_FETCHING, 
+  SET_IS_FETCHING_PROFILE,
+  SET_IS_FETCHING_REPOS, 
   GET_USER_DATA, 
   GET_USER_REPOS,
   RESET_USER_DATA,
@@ -12,7 +13,9 @@ export const setSearchInputValue = (value) => ({ type: SET_SEARCH_VALUE, payload
 
 export const setCurrentPage = (page) => ({ type: SET_CURRENT_PAGE, payload: page });
 
-export const setIsFetching = (bool) => ({ type: SET_IS_FETCHING, payload: bool });
+export const setIsFetchingProfile = (bool) => ({ type: SET_IS_FETCHING_PROFILE, payload: bool });
+
+export const setIsFetchingRepos = (bool) => ({ type: SET_IS_FETCHING_REPOS, payload: bool });
 
 export const setUserData = (data) => ({ type: GET_USER_DATA, payload: data });
 
@@ -22,7 +25,8 @@ export const resetUserData = () => ({ type: RESET_USER_DATA });
 
 export const getUserData = (username) => async (dispatch) => {
   try {
-    dispatch(setIsFetching(true))
+    dispatch(setIsFetchingProfile(true));
+
     const response = await fetch(`${BASE_GITHUB_USERS_URL}/${username}`);
     const data = await response.json();
    
@@ -44,7 +48,7 @@ export const getUserData = (username) => async (dispatch) => {
 
 export const getRepos = (username, page = 1) => async (dispatch) => {
   try {
-    dispatch(setIsFetching(true));
+    dispatch(setIsFetchingRepos(true));
 
     const queryString = `repos?type=all&sort=full_name&per_page=${PER_PAGE}&page=${page}`;
     const repoResponse = await fetch(`${BASE_GITHUB_USERS_URL}/${username}/${queryString}`);

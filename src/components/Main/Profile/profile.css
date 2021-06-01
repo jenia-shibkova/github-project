@@ -9,6 +9,14 @@
   padding: 0 0 0 15px;
 }
 
+.profile-loading {
+  height: calc(100vh - 72px - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
 .avatar {
   border-radius: 50%;
 }

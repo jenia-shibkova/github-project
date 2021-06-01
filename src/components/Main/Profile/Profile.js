@@ -1,11 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import './profile.css';
 import SocialIcon from './SocialIcon';
 import PersonIcon from './PersonIcon';
+import Loader from '../../Loader';
 import { COUNT_LIMIT } from '../../../constants';
+import './profile.css';
 
 const Profile = () => {
+  const { isFetchingProfile } = useSelector(state => state.app);
   const { userData } = useSelector(state => state.app);
   let followers;
 
@@ -13,6 +15,14 @@ const Profile = () => {
     followers = `${(userData.followers / COUNT_LIMIT).toFixed(1)}k`;
   } else {
     followers = userData.followers;
+  }
+
+  if (isFetchingProfile) {
+    return (
+      <aside className="profile profile-loading">
+        <Loader />
+      </aside>
+    );
   }
 
   return (

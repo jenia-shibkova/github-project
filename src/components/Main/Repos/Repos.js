@@ -3,11 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import ReactPaginate from 'react-paginate';
 import './repos.css';
 import RepoItem from './RepoItem';
+import Loader from '../../Loader';
 import { PER_PAGE } from '../../../constants';
 import { setCurrentPage, getRepos } from '../../../actions';
 
 const Repos = () => {  
-  const [ currentPageIndex, setCurrentPageIndex ] = useState(0);  
+  const [ currentPageIndex, setCurrentPageIndex ] = useState(0);
+  const { isFetchingRepos } = useSelector(state => state.app);  
   const { searchValue } = useSelector(state => state.app);
   const { userData } = useSelector(state => state.app);  
   const { reposCount } = userData;
@@ -34,6 +36,14 @@ const Repos = () => {
     dispatch(getRepos(searchValue, page));
   }
 
+  if (isFetchingRepos && repos.length === 0) {
+    return (
+      <div className="loader-wrapper">
+        <Loader />
+      </div>
+    );
+  }
+
   if (reposCount === 0) {
     return (
       <div className="no-repo">
@@ -42,29 +52,59 @@ const Repos = () => {
     );
   }
 
+  if (isFetchingRepos && repos.length !== 0) {
+    return ( 
+      <div className="repos">
+        <h2 className="repos__title">Repositories ({reposCount})</h2>
+        <div className="repos__list-loader-wrapper">
+          <Loader />
+        </div>
+        <div className="pagination-wrapper">
+          <div className="pagination-label">{offset + 1}-{offset + PER_PAGE} of {reposCount} items</div>
+            <ReactPaginate
+              previousLabel="&#10094;"
+              nextLabel="&#10095;"
+              pageCount={pageCount}
+              onPageChange={handlePageClick}
+              containerClassName="pagination"
+              previousLinkClassName="pagination__link"
+              nextLinkClassName="pagination__link"
+              disabledClassName="pagination__link--disabled"
+              activeClassName="pagination__link--active"
+              breakLabel="..."
+              breakClassName="break-me"   
+            />
+        </div>    
+      </div>
+    )
+  }
+
   return ( 
     <div className="repos">
       <h2 className="repos__title">Repositories ({reposCount})</h2>
       <ul className="repos__list">
         {currentPageRepos}
       </ul>
-      <div className="pagination-wrapper">
-        <div className="pagination-label">{offset + 1}-{offset + PER_PAGE} of {reposCount} items</div>
-        <ReactPaginate
-          previousLabel="&#10094;"
-          nextLabel="&#10095;"
-          pageCount={pageCount}
-          onPageChange={handlePageClick}
-          containerClassName="pagination"
-          previousLinkClassName="pagination__link"
-          nextLinkClassName="pagination__link"
-          disabledClassName="pagination__link--disabled"
-          activeClassName="pagination__link--active"
-          breakLabel="..."
-          breakClassName="break-me"        
-          // marginPagesDisplayed={2}
-        />
-      </div>  
+      {(reposCount <= 4) ? '' 
+      : (
+          <div className="pagination-wrapper">
+            <div className="pagination-label">{offset + 1}-{offset + PER_PAGE} of {reposCount} items</div>
+            <ReactPaginate
+              previousLabel="&#10094;"
+              nextLabel="&#10095;"
+              pageCount={pageCount}
+              onPageChange={handlePageClick}
+              containerClassName="pagination"
+              previousLinkClassName="pagination__link"
+              nextLinkClassName="pagination__link"
+              disabledClassName="pagination__link--disabled"
+              activeClassName="pagination__link--active"
+              breakLabel="..."
+              breakClassName="break-me" 
+            />
+          </div> 
+        )
+      } 
     </div>
   )
 };

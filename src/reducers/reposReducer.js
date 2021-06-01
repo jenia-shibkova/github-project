@@ -1,6 +1,7 @@
 import { 
   SET_SEARCH_VALUE, 
-  SET_IS_FETCHING, 
+  SET_IS_FETCHING_PROFILE, 
+  SET_IS_FETCHING_REPOS,
   GET_USER_DATA, 
   GET_USER_REPOS, 
   RESET_USER_DATA,
@@ -10,10 +11,11 @@ import {
 const defaultState = {
   userData: {},
   repos: [],  
-  isFetching: false,
+  isFetchingProfile: false,
+  isFetchingRepos: false,
   searchValue: '',
   currentPage: 1,
-}
+};
 
 const reposReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -22,27 +24,33 @@ const reposReducer = (state = defaultState, action) => {
         ...state,
         searchValue: action.payload
       }
-    case SET_IS_FETCHING:
+    case SET_IS_FETCHING_PROFILE:
       return {
         ...state,
-        isFetching: action.payload
+        isFetchingProfile: action.payload
       } 
+    case SET_IS_FETCHING_REPOS:
+      return {
+        ...state,
+        isFetchingRepos: action.payload
+      }   
     case GET_USER_DATA:
       return {
         ...state,
         userData: action.payload,
-        isFetching: false
+        isFetchingProfile: false
       }
     case GET_USER_REPOS:
       return {
         ...state,
         repos: action.payload,
-        isFetching: false
+        isFetchingRepos: false
       }     
     case RESET_USER_DATA:
       return {
         ...state,
         userData: {},
+        repos: [],
         isFetching: false
       }
     case SET_CURRENT_PAGE:
@@ -54,6 +62,6 @@ const reposReducer = (state = defaultState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default reposReducer;
