@@ -22,7 +22,7 @@
           box-sizing: border-box;
   font-size: 22px;
   line-height: 31px;
-  color: #808080;
+  color: var(--color-grey);
   position: relative;
 }
 

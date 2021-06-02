@@ -12,3 +12,9 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+@media (max-width: 425px) {
+  .main-loader {
+    height: calc(100vh - 90px);
+  }
+}

@@ -51,7 +51,8 @@ const reposReducer = (state = defaultState, action) => {
         ...state,
         userData: {},
         repos: [],
-        isFetching: false
+        isFetchingProfile: false,
+        isFetchingRepos: false
       }
     case SET_CURRENT_PAGE:
       return {

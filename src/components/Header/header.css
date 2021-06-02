@@ -1,5 +1,5 @@
 .header {
-  background: #0064EB;
+  background: var(--main-color);
 }
 
 .header__wrapper {

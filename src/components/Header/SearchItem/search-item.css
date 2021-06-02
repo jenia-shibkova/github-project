@@ -18,9 +18,9 @@
 .search__input {
   width: 500px;
   height: 40px;
-  color: #000000;
+  color: var(--text-color);
   border: transparent;
-  background: #ffffff;
+  background: var(--color-light);
   outline: none;
   border-radius: 6px;
   font-size: 14px;
@@ -32,7 +32,7 @@
 
 .search__input:active,
 .search__input:focus {
-  color: #000000;
+  color: var(--text-color);
 }
 
 @media (max-width: 610px) {
